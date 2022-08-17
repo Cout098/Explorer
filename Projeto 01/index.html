@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br"> <!--Linguagem da página-->
+<head> <!--Contém instruções para a própria página-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8"> 
+  <!--
+    Conjunto de caracteres, 
+    aceita os caracteres atuais, 
+    acentuações etc
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+    Declara a area ocupada pela página, nesse caso, 
+    deixa claro que a págian deverá ocupar 
+    todo o tamanho disponível do dispositivo. 
+    Ideal para quem pensa em deixar a página adaptável
+    a vários dispositivos, como tablets, smartphones e pcs.
+  -->
+  <title>Móveis Customizados</title><!--Titúlo da aba do navegador-->
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" class="css">
+</head>
+
+<body> 
+  <!--
+    Tudo que realmente aparece na página
+    estará aqui, fotos, textos e links etc
+  -->
+  <div id="hero"> 
+    <!--
+      Serve para fazer um agrupamento, 
+      como se fosse uma caixinha
+    -->
+    <img 
+      src="/images/image 1.jpg" 
+      alt="Imagem de uma pessoa vestida com uma jaqueta laranja e calça azul, em uma sala com móveis"
+    >
+    <h1>Ambientes <span>únicos</span> para você!</h1>
+    <!--
+      H1 é usado uma única vez, 
+      ele é o Header (tamanho de título 1).
+      <span> se parece muito com div para conteudo fraseado
+    -->
+
+    <p> 
+      <!--
+        Paragráfos: usados para escrever, 
+        nesse caso foram divididos em duas partes.
+        P já se comporta em bloco.
+      -->
+      Nós criamos ambientes <strong>exclusívos</strong> e <strong>únicos</strong>, com muito bom gosto e profissionalismo, investimos tempo e <span>dedicação no seu projeto.</span> 
+
+      <br/>
+      <br/> 
+      <!--
+        Usado para dar a quebra de linha 
+        já que a tag p abriga dois paragráfos 
+      -->
+      Tenha <span>ambientes limpos</span> e bem decorados, transmitindo <strong>elegância</strong> e <strong>finesse</strong> para todo aquele que estiver ali.
+      
+    </p>
+  </div>
+
+  <div id="footer">
+    <!--
+      Não criamos a linha no Html,
+      deixamos para ser feita diretamente no css
+    -->
+    <div id="line"></div>
+
+    <a 
+      target="_blank"
+      href="https://instagram.com/moveisparavoce">
+      Instagram
+    </a>
+    <!--
+      O elemento a é um elemento inline,
+      ou seja, ele irá se organizar 
+      lado ao lado com outros inline
+    -->
+    <a 
+      href="mailto:contato@moveisparavoce.com">
+      Fale conosco
+    </a>
+  </div>
+
+  <img 
+    id="balls"
+    src="images/balls.svg" 
+    alt="Pequenas bolinhas laranjadas no canto inferior direito da tela"
+  >
+</body>
+</html> 
