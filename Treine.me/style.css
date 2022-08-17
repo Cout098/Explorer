@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+
+  font-family: 'Open Sans', sans-serif;
+
+  background: linear-gradient(
+    180deg,
+    rgba(227, 255, 248, 0) 82.08%,
+    rgba(227, 255, 248, 0.38) 100%
+  );
+
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*.page {
+  margin: 22px 122px 153px;
+}
+1. Fazendo dessa maneira, na tentativa sem assistir a aula, eu fixei as margens sem levar em conta a largura da página 
+2. Na aula o Mayk declara que o tamanho é de 1000px e a margem superior da nav é de 65px, para deixar centralizado coloca que as margens laterais são automáticas e a inferior 0 
+3. Assim a página não se alterou com diversos tamanhos de tela*/
+
+.page {
+  width: 1000px;
+  margin: 0 auto 0;
+  padding-top: 65px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 58px;
+}
+/* Usei .page nav {}, enquanto o Mayk usou header {}. Os dois seletores se diferem na especificidade, mas obtive o mesmo resultado, já que eu tinha colocado a logo dentro de nav. Com a logo no container de nav, o display flex foi aplicado a ela e a lista (ul). Obedeceram o mesmo propósito, ficando estéticamente da mesma forma, mesmo assim corrigi o código como o do Prof. */
+
+ul {
+  display: flex;
+  gap: 48px;
+  list-style: none; /*retira a formatação em lista dos itens na nav. Retirei a formatação usando o text-decoration:; só que usei ele em todos os links "<a>" da page, já que o @treine.me no footer é um link. */
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+h1 {
+  font-family: 'Mulish', sans-serif;
+}
+
+.page nav ul a {
+  font-size: 18px;
+  line-height: 23px;
+
+  color: #1f1534;
+
+  opacity: 0.5;
+}
+
+.page nav ul a:hover {
+  font-weight: bold;
+  opacity: 1;
+}
+/*Eu tinha utilizado opacity para definir o movimento no mouse, mas o Maikão usou font-weight: bold; para deixar ele em negrito na passagem do mouse.*/
+
+main {
+  display: flex;
+  align-items: center;/*alinha os itens como se um alinha cortasse os dois pelo meio*/
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#content h1 {
+  font-weight: 400; /*normal pode ser usado no lugar*/
+  font-size: 49px;
+  line-height: 56px;
+  color: #000;
+}
+
+#content h1 span {
+  color: #89c5cc;
+
+  font-weight: 700; /*bold pode ser usado no lugar*/
+}
+
+#content p {
+  font-size: 14px;
+  line-height: 28px;
+
+  color: #7d7987;
+
+  margin: 40px 0;
+}
+
+#content .button {
+  height: auto;
+  width: 183px;
+
+  background: #69b99d;
+  border-radius: 4px;
+  border: none; /*ou 0*/
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: #f9f9f9;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+}
+/*1. A diferença no código foi necessária, já que no HTML não usei a tag <button>, mas sim a tag <a>. Decidi fazer isso para ter um link para o Whatsapp da empresa ou já que também temos um link para a página do Instagram. 
+2. Como <a> se comporta inline, tive que definir largura e altura.
+3. Não sei se terei problema ao mudar as dimenções da página tendo isso definido.*/
+#content .button:hover {
+  background: #429276;
+}
+
+footer {
+  font-size: 14px;
+  line-height: 28px;
+
+  color: #000;
+
+  text-align: center;
+
+  margin-top: 80px;
+}
+
+footer a {
+  font-weight: bold;
+}
+
+#balls {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
