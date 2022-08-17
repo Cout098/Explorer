@@ -69,7 +69,7 @@ h1 {
 
 main {
   display: flex;
-  align-items: center;/*alinha os itens como se um alinha cortasse os dois pelo meio*/
+  align-items: center; /*alinha os itens como se um alinha cortasse os dois pelo meio*/
   flex-direction: row;
   justify-content: space-between;
 }
