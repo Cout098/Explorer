@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&family=Staatliches&display=swap"
+      rel="stylesheet"
+    />
+    <title>Formulário</title>
+  </head>
+  <body>
+    <div class="page">
+    <!--
+    Coloquei todo o conteúdo da página
+    dentro dessa DIV para poder determinar 
+    a margem de toda a page de uma só vez.
+    Centralizando o conteúdo.
+    -->
+      <header>
+        <h1>Mentoria</h1>
+        <p>
+          Preencha o formulário abaixo
+          <br />
+          para agendar a sua mentoria
+        </p>
+      </header>
+
+      <form id="my-form" action="">
+        <fieldset>
+          <legend>INFORMAÇÕES PESSOAIS</legend>
+
+          <div class="colum-name">
+          <!--
+          Agrupei as labels e inputs com nome e sobrenome
+          dentro dessa div para colocá-los em outra direção 
+          com display:flex. 
+          Um ao lado do outro.
+          -->
+            <div class="input-wrapper">
+              <label for="name-study">Nome</label>
+              <input type="text" id="name-study" pattern="[aA-zZ]+" required/>
+            </div>
+            <!--
+            A div .input-wrapper foi usada para agrupar
+            e estilizar os inputs do form.
+            Aqui eu coloquei os labels e inputs de nome e sobrenome
+            separados para que pudessem obedecer como filhos 
+            no flex sem perderem a estilização.
+            -->
+            <div class="input-wrapper">
+              <label for="last-name-study">Sobrenome</label>
+              <input type="text" id="last-name-study" pattern="[aA-zZ]+" required/>
+            </div>
+          </div>
+          <div class="input-wrapper">
+            <label for="email-study">
+              Email
+              <span>(digite um email válido)</span>
+            </label>
+            <input type="email" id="email-study" required/>
+
+            <label for="password-study">
+              Senha
+              <span>(minímo de 6 caracteres)</span>
+            </label>
+            <input type="password" id="password-study" minlength="6"/>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>INFORMAÇÕES DO MENTOR</legend>
+
+          <div class="input-wrapper">
+            <label for="name-mentor">
+              Nome do seu mentor
+              <span>(só o primeiro nome)</span>
+            </label>
+            <input type="text" id="name-mentor" pattern="[aA-zZ]+"/>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>SEUS HORÁRIOS DISPONÍVEIS</legend>
+
+          <div class="colum-hours">
+          <!--
+          Coloquei essa div para agrupar o conteúdo 
+          dos campos de horário e data. 
+          Aqui eu quis agrupar os subtítulos H6 junto
+          com os inputs, assim como foi feito em aula usando
+          a div="fieldset-wrapper".
+          E mantendo o padding definido no form,
+          garantindo com que o subtítulo mantivesse a mesma
+          distância dos legends que os labels e input da page.
+          -->
+            <h6>PRIMEIRA MENTORIA</h6>
+
+            <div class="hours">
+              <div class="input-wrapper">
+                <label for="first-date">
+                  Data
+                  <span>(DD/MM/AAAA)</span>
+                </label>
+                <input type="date" id="first-date" />
+              </div>
+
+              <div class="input-wrapper">
+                <label for="begin-hours">Das</label>
+                <input type="time" id="begin-hours" />
+              </div>
+
+              <div class="input-wrapper">
+                <label for="end-hours">Até</label>
+                <input type="time" id="end-hours" />
+              </div>
+            </div>
+
+            <h6>SEGUNDA MENTORIA</h6>
+
+            <div class="hours">
+              <div class="input-wrapper">
+                <label for="second-date">
+                  Data
+                  <span>(DD/MM/AAAA)</span>
+                </label>
+                <input type="date" id="second-date" />
+              </div>
+
+              <div class="input-wrapper">
+                <label for="begin-hours-2">Das</label>
+                <input type="time" id="begin-hours-2" />
+              </div>
+
+              <div class="input-wrapper">
+                <label for="end-hours-2">Até</label>
+                <input type="time" id="end-hours-2" />
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+
+      <footer>
+        <input
+          class="button-footer"
+          form="my-form"
+          type="submit"
+          value="Salvar"
+        />
+      </footer>
+    </div>
+  </body>
+</html>

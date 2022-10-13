@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #e5e5e5;
+}
+
+body::before {
+  content: '';
+  width: 100%;
+  height: 436px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: -1;
+  background: #535971;
+}
+/*
+  Aqui eu uso ::before para criar um
+  elemento usando o css.
+  Além disso, coloco sua posição absoluta para poder usar o z-index e colocá-lo uma página atrás. Assim não tampo o conteúdo do meu header.
+*/
+
+.page {
+  width: 750px;
+  margin: auto;
+}
+/*
+  Agrupando todo conteúdo do body dentro dessa 
+  DIV .page, eu consigo definir a largura fixa dessa página e como as margens vão se comportar. 
+  Nesse caso para alinhar a página ao centro defini que as margens seriam automáticas.
+  Sendo assim cada lado terá a mesma distância
+  da borda do dispositivo.
+*/
+
+h1,
+legend,
+h6,
+.button-footer {
+  font-family: 'Staatliches';
+  font-weight: 400;
+}
+
+p,
+label,
+input {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+/*
+  Tanto no primeiro par de chaves, quanto no segundo
+  estou definindo quais tag receberão os tipos fontes.
+  Já coloquei que todas terão font-weight:400 aqui.
+/*
+
+/*--------------------HEADER----------------------*/
+header {
+  margin-top: 140px;
+  width: 355px;
+}
+
+header h1 {
+  font-size: 48px;
+  line-height: 60px;
+  color: #ffffff;
+
+  margin-bottom: 18px;
+}
+
+header p {
+  font-size: 20px;
+  line-height: 30px;
+
+  color: #ffffff;
+}
+
+/*--------------------------FORM------------------------*/
+
+form {
+  width: 750px;
+  min-height: 300px;
+
+  background: #ffffff;
+
+  margin-top: 58px;
+  padding: 64px 58px 64px 73px;
+
+  border-radius: 24px 24px 0 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+/*
+  No form foi o quebra-cabeça, já que eu tinha 
+  esquecido do box-sizing: border-box, assim o 
+  formulário ficou somando os paddings a largura 
+  total de 750px.
+  Diferente do exercício em aula os paddings não tinham 
+  a mesma medida.
+  O display:flex; colocado aqui foi para criar
+  o gap de 32px entre os Fieldset.
+*/ 
+
+fieldset {
+  border: none;
+}
+
+fieldset legend {
+  font-size: 24px;
+  line-height: 34px;
+
+  color: #535971;
+
+  width: 100%;
+
+  border-bottom: 1px solid #e6e6f0;
+  padding-bottom: 16px;
+
+  margin-bottom: 32px;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-wrapper label {
+  font-size: 14px;
+  line-height: 24px;
+
+  color: #4e4958;
+
+  margin-bottom: 8px;
+}
+
+.input-wrapper label span {
+  font-size: 12px;
+  line-height: 20px;
+
+  color: #c1bccc;
+}
+
+.input-wrapper input {
+  background: #fafafc;
+
+  height: 56px;
+
+  border: 1px solid #e6e6f0;
+  border-radius: 8px;
+
+  font-size: 14px;
+  line-height: 24px;
+
+  color: #8a8a8f;
+  padding: 0px 20px;
+
+  margin-bottom: 16px;
+}
+
+.input-wrapper input:focus,
+.button-footer:focus {
+  outline: none;
+}
+
+.input-wrapper input:focus-visible {
+  border: 1px solid #475cff;
+}
+
+.input-wrapper input:invalid {
+  border: 1px solid red;
+}
+
+.colum-name {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.colum-name input {
+  width: 300px;
+}
+
+.colum-hours h6 {
+  font-size: 20px;
+  line-height: 34px;
+
+  color: #535971;
+}
+
+.hours {
+  display: flex;
+}
+
+.hours > div:nth-child(1) {
+  width: 100%;
+}
+
+.hours > div:nth-child(2) {
+  margin: 0 10px 0 32px;
+}
+
+/*-----------------FOOTER-----------------*/
+
+footer {
+  background: #535971;
+
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 0px 0px 20px 20px;
+  margin-bottom: 90px;
+  padding: 43px 70px;
+}
+
+footer .button-footer {
+  background: #ff5374;
+
+  height: 56px;
+  padding: 16px 40px;
+
+  font-size: 20px;
+  line-height: 26px;
+  color: #ffffff;
+
+  border: 0;
+  border-radius: 20px;
+
+  cursor: pointer;
+}
+
+footer .button-footer:hover,
+footer .button-footer:focus-visible {
+  background: #ec2c4f;
+  box-shadow: 0 0 4px #475cff;
+  transition: all 0.3s ease-in;
+}
