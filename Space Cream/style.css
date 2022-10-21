@@ -86,6 +86,9 @@ main .card {
 
   animation: downtotop 700ms 200ms reverse backwards;
 }
+/* 
+Ao colocar a position: relative 
+*/
 
 main .card img {
   width: 100%;
