@@ -4,14 +4,19 @@
   box-sizing: border-box;
 }
 
+/* ==============================GERAL====================================== */
+
 :root {
   --bc-body: hsl(233, 100%, 97%);
   --bc-header: hsl(218, 17%, 62%);
   --bc-title: hsl(275, 18%, 79%);
   --bc-subtitle-card: hsl(312, 91%, 96%);
+  --bc-body-desktop: hsl(0, 0%, 100%);
 
-  --ff-titles: 'Staatliches', sans-serif;
+  --ff-titles: 'Staatliches', cursive;
   --ff-body: 'Palanquin', sans-serif;
+  --ff-footer: 'Open Sans', sans-serif;
+  --ff-header-desktop:'Roboto', sans-serif;
 
   --fs-titles: 1.5rem;
 
@@ -23,17 +28,20 @@
 }
 
 body {
-  max-width: 38.4rem;
-  margin: 0 auto;
-
   background-color: var(--bc-body);
   font-family: var(--ff-body);
   text-align: center;
 }
 
+.page-wrapper{
+  max-width: 38.4rem;
+  margin: 0 auto;
+}
+
+/*==========================HEADER/CABEÇALHO==================================*/
 header {
   background-color: var(--bc-header);
-  padding: 3rem 0;
+  padding-top: 3rem;
 }
 
 header h1 {
@@ -53,12 +61,8 @@ header h1 {
   margin-top: 4rem;
 }
 
-main {
-  margin: 2.5rem auto 0;
-  padding: 0 3.2rem;
-}
-
-main p {
+header p {
+  background:var(--bc-body);
   font-family: var(--ff-body);
   font-size: 1.6rem;
   font-weight: 400;
@@ -66,7 +70,14 @@ main p {
 
   color: var(--fc-body);
 
-  margin: 0 auto 6.3rem;
+  padding: 2rem 3rem;
+}
+
+/*==========================MAIN/CONTEUDO PRINCIPAL==================================*/
+
+main {
+  margin: 2.5rem auto 0;
+  padding: 0 3.2rem;
 }
 
 main .card {
@@ -80,29 +91,63 @@ main .card {
 
 main .card img {
   width: 100%;
+  height: 100%;
 }
 
 main .card h2 {
-  width: fit-content;
-
+  
   background-color: var(--bc-subtitle-card);
   font-size: var(--fs-titles);
   font-weight: 600;
   line-height: 3.4rem;
   letter-spacing: 5%;
-
+  
   color: var(--fc-subtitle-card);
   text-transform: uppercase;
-
+  
   padding: 0 2.4rem;
   border-radius: 20px;
-
+  
   position: absolute;
   right: 18px;
   top: 18px;
-
+  
   animation: toptodown 700ms 350ms reverse backwards;
 }
+
+main .card:nth-child(5),
+main .card:nth-child(6) {
+  position: absolute;
+  top: 0;
+  z-index: -10;
+  opacity: 0;
+}
+
+/* ==============================FOOTER/RODAPE======================================= */
+
+footer {
+  position: relative;
+  bottom: 0;
+  left: auto;
+  z-index: -1;
+  opacity: 0;
+}
+
+footer p {
+  font-family: var(--ff-footer);
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.8rem;
+  
+  color: var(--fc-subtitle-card);
+}
+
+footer p a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* ======================================ANIMATION/ANIMACOES================================= */
 
 @keyframes downtotop {
   100% {
@@ -115,5 +160,103 @@ main .card h2 {
   100% {
     transform: translateY(-55px);
     opacity: 0;
+  }
+}
+
+/* ============================================DESKTOP============================================= */
+
+@media (min-width:700px) {
+ 
+  .page-wrapper  {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 37.7rem 1fr;
+  }
+
+  body {
+    background-color: var(--bc-body-desktop);
+  }
+
+  header {
+    width: 37.7rem, 100%;
+    height: 100%;
+  }
+
+  header h1 {
+    margin: 3.2rem auto 0;
+    font-size: 4.8rem;
+    line-height: 3.4rem;
+    padding: 2.1rem;
+  }
+
+  header p {
+    width: 27.5rem;
+    font-family: var(--ff-header-desktop);
+    text-align: center;
+
+    background-color: var(--bc-header);
+    color: var(--fc-header);
+
+    margin: 3.2rem auto;
+    padding: 0;
+  }
+
+  main {
+    margin: 6.4rem 9.8rem 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "A B E" "D B F" "D C F" ;
+    gap: 3.2rem;
+  }
+
+  main .card {
+    margin: 0;
+  }
+
+  main .card:nth-child(1) {
+    grid-area: A;
+  }
+
+  main .card:nth-child(2) {
+    grid-area: B;
+  }
+
+  main .card:nth-child(3) {
+    grid-area: C;
+  }
+
+  main .card:nth-child(4) {
+    grid-area: D;
+  }
+
+  main .card:nth-child(5) {
+    grid-area: E;
+    position: relative;
+    opacity: 1;
+  }
+
+  main .card:nth-child(6) {
+    grid-area: F;
+    position: relative;
+    opacity: 1;
+  }
+
+  main .card:nth-child(odd) {
+    width: 22rem;
+    height: 15rem;
+  }
+
+  main .card:nth-child(even) {
+    width: 22rem;
+    height: 35rem;
+  }
+
+  
+  footer {
+    margin: 5rem auto 4.6rem;
+
+    z-index: 0;
+    opacity: 1;
   }
 }
