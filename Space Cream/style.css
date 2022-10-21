@@ -5,7 +5,6 @@
 }
 
 /* ==============================GERAL====================================== */
-
 :root {
   --bc-body: hsl(233, 100%, 97%);
   --bc-header: hsl(218, 17%, 62%);
@@ -74,7 +73,6 @@ header p {
 }
 
 /*==========================MAIN/CONTEUDO PRINCIPAL==================================*/
-
 main {
   margin: 2.5rem auto 0;
   padding: 0 3.2rem;
@@ -124,7 +122,6 @@ main .card:nth-child(6) {
 }
 
 /* ==============================FOOTER/RODAPE======================================= */
-
 footer {
   position: relative;
   bottom: 0;
@@ -148,7 +145,6 @@ footer p a {
 }
 
 /* ======================================ANIMATION/ANIMACOES================================= */
-
 @keyframes downtotop {
   100% {
     transform: translateY(25px);
@@ -164,7 +160,6 @@ footer p a {
 }
 
 /* ============================================DESKTOP============================================= */
-
 @media (min-width:700px) {
  
   .page-wrapper  {
@@ -176,7 +171,7 @@ footer p a {
   body {
     background-color: var(--bc-body-desktop);
   }
-
+/* ================================HEADER/CABECALHO===================================== */
   header {
     width: 37.7rem, 100%;
     height: 100%;
@@ -200,7 +195,7 @@ footer p a {
     margin: 3.2rem auto;
     padding: 0;
   }
-
+/* ==========================MAIN/CONTEUDO PRINCIPAL=============================== */
   main {
     margin: 6.4rem 9.8rem 0;
     padding: 0;
@@ -242,6 +237,11 @@ footer p a {
     opacity: 1;
   }
 
+  /* 
+  Atribuí cada card ao suas devida area dentro do grid.
+  Porém os dois últimos cards que não se encontravam no projeto 
+  mobile eu atribuí */
+
   main .card:nth-child(odd) {
     width: 22rem;
     height: 15rem;
@@ -251,8 +251,15 @@ footer p a {
     width: 22rem;
     height: 35rem;
   }
+  /* 
+    Usando a propriedade nth-child para alterar
+    o tamanho dos cards em suas areas no grid.
+    Levando em conta que os cards alteram os seu tamanho de dois em dois,
+    coloco que ODD e EVEN para aplicar os estilos de dois a dois levando em conta
+    que a regra irá valer para novos cards que forem adicionados a página.
+  */
 
-  
+/* ================================FOOTER DESKTOP================================== */
   footer {
     margin: 5rem auto 4.6rem;
 
